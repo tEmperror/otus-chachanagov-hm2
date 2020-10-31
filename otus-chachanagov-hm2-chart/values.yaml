@@ -1,0 +1,19 @@
+replicaCount: 2
+
+image: temperror/otus-chachanagov-hm:2
+
+service:
+  type: NodePort
+  port: 9000
+
+ingress:
+  host: arch.homework
+  path: /otusapp/sergey-chachanagov($|/)(.*)
+
+postgresql:
+  enabled: true
+  postgresqlDatabase: postgres
+  postgresqlUsername: postgres
+  postgresqlPassword: postgres
+  service:
+    port: "5432"
