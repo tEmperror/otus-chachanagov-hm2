@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "a8af7dff-ee05-4586-ba7c-15abd07dcd30",
+		"name": "Chachanagov-hm2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f5799c4-7a69-4109-a6c0-1c25f1647f8c",
+						"exec": [
+							"pm.collectionVariables.set(\"userId\", responseBody)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Bob\",\n    \"lastName\": \"Bobov\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/otusapp/sergey-chachanagov/create",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"sergey-chachanagov",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/otusapp/sergey-chachanagov/get?id={{userId}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"sergey-chachanagov",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": {{userId}},\n    \"firstName\": \"Ray\",\n    \"lastName\": \"Bobov\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/otusapp/sergey-chachanagov/update",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"sergey-chachanagov",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user again",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/otusapp/sergey-chachanagov/get?id={{userId}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"sergey-chachanagov",
+						"get"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/otusapp/sergey-chachanagov/delete?id={{userId}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"otusapp",
+						"sergey-chachanagov",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "254c3330-b548-4bdc-a0b0-39508c0603c5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f91f0469-ee9b-4417-9848-f28206080ecb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b1173280-a7b8-4725-bdee-8b2ae699613c",
+			"key": "userId",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
