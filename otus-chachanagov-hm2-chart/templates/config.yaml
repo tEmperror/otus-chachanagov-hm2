@@ -4,6 +4,4 @@ metadata:
   name: chachanagov-hm2-secret
 type: Opaque
 data:
-  database_url: {{ printf "jdbc:postgresql://%s:%s/%s" (include "postgresql.fullname" .) .Values.postgresql.service.port .Values.postgresql.postgresqlDatabase | b64enc | quote }}
-  database_user: {{ printf "%s" .Values.postgresql.postgresqlUsername | b64enc | quote }}
-  database_pass: {{ printf "%s" .Values.postgresql.postgresqlPassword | b64enc | quote }}
+  spring_datasource_url: {{ printf "jdbc:postgresql://pg-db:%s/%s?user=%s&password=%s" .Values.postgresql.service.port .Values.postgresql.postgresqlDatabase .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword | b64enc }}

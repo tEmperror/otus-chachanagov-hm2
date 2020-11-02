@@ -8,8 +8,6 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: web
+      targetPort: web
   selector:
     {{- include "otus-chachanagov-hm2-chart.selectorLabels" . | nindent 4 }}

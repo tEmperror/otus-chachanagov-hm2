@@ -7,11 +7,14 @@ service:
   port: 9000
 
 ingress:
-  host: arch.homework
-  path: /otusapp/sergey-chachanagov($|/)(.*)
+  enabled: true
+  hosts:
+    - host: arch.homework
+      paths: ["/otusapp/sergey-chachanagov"]
 
 postgresql:
   enabled: true
+  fullnameOverride: pg-db
   postgresqlDatabase: postgres
   postgresqlUsername: postgres
   postgresqlPassword: postgres
